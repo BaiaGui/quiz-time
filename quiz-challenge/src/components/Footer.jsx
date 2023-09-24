@@ -5,7 +5,6 @@ export function Footer(){
     return (
         <div className="flex w-full justify-between items-center">
             <p className="text-white text-xl flex items-center">4 <p className='text-sm ml-1'> / 5</p></p>
-            
             <button className='bg-gray-400 w-10 h-10 flex justify-center items-center rounded-full'><img src={ArrowIcon} alt="" /></button>
         </div>
     );
