@@ -15,9 +15,9 @@ function App() {
     <div className=''>
       <Header/>
       <QuestionContainer>
-        <Card value={true} awnser="1+1 é 2" imgLabel={reactLogo}/>
-        <Card value={false} awnser="1+1 é 11" imgLabel={reactLogo}/>
-        <Card value={false} awnser="1+1 é 3" imgLabel={reactLogo}/>
+        <Card value={true} answer="1+1 é 2" imgLabel={reactLogo}/>
+        <Card value={false} answer="1+1 é 11" imgLabel={reactLogo}/>
+        <Card value={false} answer="1+1 é 3" imgLabel={reactLogo}/>
       </QuestionContainer>
       <Footer/>
     </div>
