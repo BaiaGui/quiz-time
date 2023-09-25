@@ -10,7 +10,7 @@ import { useState } from 'react'
 function App() {
 
 
-
+  
   let questionsArray= [
     {
       "question": "Qual estrutura de dados é mais adequada para representar uma conjunto de elementos com comportamento 'primeiro a entrar, primeiro a sair' (FIFO)?",
