@@ -1,11 +1,11 @@
 import a from '../assets/arrow.svg'
 
 
-export function Footer({active}){
+export function Footer({active, questionNumber, totalNumber, handleClick}){
     return (
         <div className="flex w-full justify-between items-center">
-            <p className="text-2xl flex items-center font-bold">4 <span className='text-sm ml-1'> / 5</span></p>
-            {active?<button className='bg-green-light w-12 h-12 flex justify-center items-center rounded-full hover:scale-105 transition-all'>
+            <p className="text-2xl flex items-center font-bold">{questionNumber+1} <span className='text-sm ml-1'> / {totalNumber}</span></p>
+            {active?<button onClick={handleClick} className='bg-green-light w-12 h-12 flex justify-center items-center rounded-full hover:scale-105 transition-all'>
                 <ArrowIcon color="#5CAD1D"/>
             </button>:<button className='bg-grey-3 w-12 h-12 flex justify-center items-center rounded-full cursor-default'>
                 <ArrowIcon color="#565E6D"/>

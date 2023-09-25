@@ -9,7 +9,37 @@ import { useState } from 'react'
 
 function App() {
 
+
+
+  let questionsArray= [
+    {
+      "question": "Qual é a cor do céu?",
+      "a1": "Azul",
+      "a2": "Verde",
+      "a3": "Rosa",
+      "v1": true,
+      "v2": false,
+      "v3": false,
+    },
+    {
+      "question": "Quanto é 3 + 5?",
+      "a1": "6",
+      "a2": "35",
+      "a3": "8",
+      "v1": false,
+      "v2": false,
+      "v3": true,
+    },
+  ];
+
   const [revealedState, setRevealedState]=useState(false);
+  let points = 0;
+  const [questionNumber, setQuestionNumber] =useState(0);
+
+  const nextQuestion = () =>{
+    setQuestionNumber(questionNumber+1);
+    setRevealedState(false);
+  }
 
   function handleClick(){
     setRevealedState(true);
@@ -19,13 +49,13 @@ function App() {
     <div className='bg-grey-5 w-screen h-screen flex justify-center items-center text-grey-1'>
     <div className='bg-grey-6 px-36 py-16 rounded-md'>
     <div className=''>
-      <Header/>
-      <QuestionContainer>
-        <Card value={true} revealed={revealedState} answer="1+1 é 2" imgLabel={reactLogo} handleClick={handleClick}/>
-        <Card value={false} revealed={revealedState} answer="1+1 é 11" imgLabel={reactLogo} handleClick={handleClick}/>
-        <Card value={false} revealed={revealedState} answer="1+1 é 3" imgLabel={reactLogo} handleClick={handleClick}/>
+      <Header correctAnswers={points}/>
+      <QuestionContainer question={questionsArray[questionNumber].question}>
+        <Card value={questionsArray[questionNumber].v1} revealed={revealedState} answer={questionsArray[0].a1} imgLabel={reactLogo} handleClick={handleClick}/>
+        <Card value={questionsArray[questionNumber].v2} revealed={revealedState} answer={questionsArray[0].a2} imgLabel={reactLogo} handleClick={handleClick}/>
+        <Card value={questionsArray[questionNumber].v3} revealed={revealedState} answer={questionsArray[0].a3} imgLabel={reactLogo} handleClick={handleClick}/>
       </QuestionContainer>
-      <Footer active={revealedState}/>
+      <Footer active={revealedState} questionNumber={questionNumber} totalNumber={questionsArray.length} handleClick={nextQuestion} />
     </div>
       
     </div>

@@ -1,9 +1,9 @@
 import { Children } from "react";
 
-export function QuestionContainer({children}){
+export function QuestionContainer({question, children}){
     return (
         <div className="flex flex-col items-center">
-            <p className="my-16 text-2xl font-bold ">Quanto é 1+1? Justifique sua resposta</p>
+            <p className="my-16 text-2xl font-bold ">{question}</p>
             <div className="flex justify-center gap-10 mb-16 ">
                 {children}
             </div>
