@@ -16,8 +16,8 @@ function App() {
   }
 
   return (
-    <div className='bg-stone-950 w-screen h-screen flex justify-center items-center'>
-    <div className='bg-zinc-900 px-36 py-16 rounded-md'>
+    <div className='bg-grey-5 w-screen h-screen flex justify-center items-center text-grey-1'>
+    <div className='bg-grey-6 px-36 py-16 rounded-md'>
     <div className=''>
       <Header/>
       <QuestionContainer>
@@ -25,7 +25,7 @@ function App() {
         <Card value={false} revealed={revealedState} answer="1+1 é 11" imgLabel={reactLogo} handleClick={handleClick}/>
         <Card value={false} revealed={revealedState} answer="1+1 é 3" imgLabel={reactLogo} handleClick={handleClick}/>
       </QuestionContainer>
-      <Footer/>
+      <Footer active={revealedState}/>
     </div>
       
     </div>
