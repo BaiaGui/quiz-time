@@ -33,7 +33,7 @@ function App() {
   ];
 
   const [revealedState, setRevealedState]=useState(false);
-  let points = 0;
+  const [points, setPoints]=useState(0);
   const [questionNumber, setQuestionNumber] =useState(0);
 
   const nextQuestion = () =>{
@@ -41,8 +41,11 @@ function App() {
     setRevealedState(false);
   }
 
-  function handleClick(){
+  function handleClick(bool){
     setRevealedState(true);
+    if(bool){
+      setPoints(points+1);
+    }
   }
 
   return (
@@ -51,9 +54,9 @@ function App() {
     <div className=''>
       <Header correctAnswers={points}/>
       <QuestionContainer question={questionsArray[questionNumber].question}>
-        <Card value={questionsArray[questionNumber].v1} revealed={revealedState} answer={questionsArray[0].a1} imgLabel={reactLogo} handleClick={handleClick}/>
-        <Card value={questionsArray[questionNumber].v2} revealed={revealedState} answer={questionsArray[0].a2} imgLabel={reactLogo} handleClick={handleClick}/>
-        <Card value={questionsArray[questionNumber].v3} revealed={revealedState} answer={questionsArray[0].a3} imgLabel={reactLogo} handleClick={handleClick}/>
+        <Card value={questionsArray[questionNumber].v1} revealed={revealedState} answer={questionsArray[questionNumber].a1} imgLabel={reactLogo} handleClick={handleClick}/>
+         <Card value={questionsArray[questionNumber].v2} revealed={revealedState} answer={questionsArray[questionNumber].a2} imgLabel={reactLogo} handleClick={handleClick}/>
+        <Card value={questionsArray[questionNumber].v3} revealed={revealedState} answer={questionsArray[questionNumber].a3} imgLabel={reactLogo} handleClick={handleClick}/>
       </QuestionContainer>
       <Footer active={revealedState} questionNumber={questionNumber} totalNumber={questionsArray.length} handleClick={nextQuestion} />
     </div>
