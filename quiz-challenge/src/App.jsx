@@ -64,13 +64,18 @@ function App() {
   //pages State
   const [page, setPage]=useState('initialPage');
 
+  function resetGame(){
+    setPage('initialPage');
+    setPoints(0);
+  }
+
   switch(page){
     case 'initialPage':
       return <InitialPage handleClick={()=>setPage('questionsPage')}/> ;break;
     case 'questionsPage':
       return <QuestionsPage resultsFunction={()=>setPage('resultPage')} points={points} setPoints={setPoints} questionsArray={questionsArray}/>;break;
     case 'resultPage':
-      return <ResultPage result={points/questionsArray.length}/>;break;
+      return <ResultPage result={[points/questionsArray.length, points]} handleClick={()=>resetGame()}/>;break;
 
   }
   
