@@ -1,4 +1,4 @@
-# quiz-challenge
+# quiz-time
 *PT-BR*:
 Este projeto consiste em um jogo estilo quiz onde o jogador poderá testar seus conhecimentos em diferentes assuntos. O jogo foi desenvolvido em React e Tailwind CSS e é minha solução do desafio semanal #38 proposto pela empresa Rocketseat.<br><br>
 *EN*:
